@@ -135,8 +135,9 @@ main.container, nav.navbar, footer.container{
   backdrop-filter: blur(10px);
 }
 .cover-meta-row{
-  display:flex;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns: 1fr minmax(0, 1fr);
+  align-items: center;
   gap: 16px;
   padding: 10px 6px;
   border-bottom: 1px solid rgba(255,255,255,.12);
@@ -151,10 +152,9 @@ main.container, nav.navbar, footer.container{
 .cover-value{
   font-weight: 700;
   text-align:right;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 60%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .cover-editable{
   outline: none;
@@ -181,17 +181,13 @@ main.container, nav.navbar, footer.container{
     padding: 18px 18px 16px 34px;
   }
   .cover-meta-row{
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: flex-start;
     gap: 6px;
   }
   .cover-value{
     text-align: left;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    max-width: 100%;
-    word-break: break-word;
+    width: 100%;
   }
   .cover-actions .btn{
     width: 100%;
