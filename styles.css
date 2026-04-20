@@ -175,6 +175,36 @@ main.container, nav.navbar, footer.container{
   padding-top: 18px;
 }
 
+/* Mobile/tablet responsiveness for long names */
+@media (max-width: 768px){
+  .cover-body{
+    padding: 18px 18px 16px 34px;
+  }
+  .cover-meta-row{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .cover-value{
+    text-align: left;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: 100%;
+    word-break: break-word;
+  }
+  .cover-actions .btn{
+    width: 100%;
+  }
+}
+
+/* Ensure long names don't truncate in workbook headers */
+.badge{
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .workbook-anim {
   animation: pageIn 360ms cubic-bezier(.2,.9,.2,1);
   transform-origin: 50% 0%;
